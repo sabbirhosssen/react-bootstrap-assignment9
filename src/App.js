@@ -8,6 +8,7 @@ import Services from './Components/Service/Services';
 import About from './Components/About/About';
 import Contract from './Components/Contract/Contract';
 import { Router, Switch, Route, BrowserRouter } from 'react-router-dom';
+import NotFound from './Components/NotFound/NotFound';
 
 
 
@@ -25,18 +26,22 @@ function App() {
             <Carousele></Carousele>
             <Home></Home>
           </Route>
-          <Route path="/home">
+          <Route exact path="/home">
             <Carousele></Carousele>
             <Home></Home>
           </Route>
-          <Route path="/services">
+          <Route exact path="/services">
             <Services></Services>
           </Route>
-          <Route path="/about">
+          <Route exact path="/about">
             <About></About>
           </Route>
-          <Route path="/contact">
+          <Route exact path="/contact">
             <Contract></Contract>
+          </Route>
+          <Route exact path="*">
+            <NotFound></NotFound>
+
           </Route>
 
         </Switch>
